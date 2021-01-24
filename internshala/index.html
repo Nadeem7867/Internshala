@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wen</title>
+    <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        </script>
+</head>
+<body>
+    <h2>My Students</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="myTable" class="container">
+        <b><th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Course</th>
+        <th>Year</th></b>
+        <tr class="header">
+            <td>Nadeem</td>
+            <td>20</td>
+            <td>Shimoga</td>
+            <td>B.E</td>
+            <td>3rd</td>
+        </tr>
+        <tr>
+            <td>Khan</td>
+            <td>21</td>
+            <td>calcutta</td>
+            <td>BCA</td>
+            <td>2nd</td>
+        </tr>
+        <tr>
+            <td>Deepu</td>
+            <td>22</td>
+            <td>bihar</td>
+            <td>BCA</td>
+            <td>2nd</td>
+        </tr>
+        <tr>
+            <td>Salman</td>
+            <td>23</td>
+            <td>UP</td>
+            <td>BCA</td>
+            <td>2nd</td>
+        </tr>
+        <tr>
+            <td>Sharukh</td>
+            <td>23</td>
+            <td>Belagaum</td>
+            <td>B.E</td>
+            <td>3rd</td>
+        </tr>
+        <tr>
+            <td>Alan Walker</td>
+            <td>25</td>
+            <td>Delhi</td>
+            <td>MCA</td>
+            <td>2nd</td>
+        </tr>
+    </table>
+   
+</body>
+</html>
